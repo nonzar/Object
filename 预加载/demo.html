@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+    <title>加载</title>
+</head>
+<body>
+    <script src="js/preloadjs-0.6.0.min.js"></script>
+    <script src="js/nz.preload.js"></script>
+    <script>
+        /* 示例 */
+        var myPreload = NZPreload.createNew().init({
+            file: [
+                "images/1.jpg",
+                "images/2.jpg",
+                "images/3.jpg",
+                "images/4.jpg"
+            ],
+            onProgress: function (progress) {
+                console.log(progress * 100 + "%");
+            },
+            onComplete: function () {
+                console.log("加载完毕");
+            }
+        });
+    </script>
+</body>
+</html>

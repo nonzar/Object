@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script src="preloadjs-0.6.0.min.js"></script>
+    <script src="nzpreload.js"></script>
+    <script>
+        var nzpl1 = NZPreload.createNew().init({
+            onProgress: function (progress) {
+                console.log(Math.round(progress * 100));
+            },
+            onComplete: function () {
+            },
+            file: [
+                "images/transparent.png"
+            ]
+        });
+    </script>
+</body>
+</html>

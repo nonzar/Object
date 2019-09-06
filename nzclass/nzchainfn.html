@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script src="nzobject.js"></script>
+    <script src="nzchainfn.js"></script>
+    <script>
+        var len = 0,
+        nzcf1 = NZChainfn.createNew().fn(function (e) {
+            setTimeout(function () {
+                console.log(len++);
+                e.fn();
+            }, 500);
+        }).fn(function (e) {
+            setTimeout(function () {
+                console.log(len++);
+                e.fn();
+            }, 500);
+        }).fn(function (e) {
+            setTimeout(function () {
+                console.log(len++);
+                e.fn();
+            }, 500);
+        }).fn(function (e) {
+            console.log(len++);
+        }, false).fn(function (e) {
+            console.log(len++);
+        }, false).fn(function (e) {
+            setTimeout(function () {
+                console.log(len++);
+                e.fn();
+            }, 500);
+        });
+
+        function a() {
+            setTimeout(function () {
+                return 1;
+            });
+        }
+        function b() {
+            return a();
+        }
+        console.log(b());
+    </script>
+</body>
+</html>

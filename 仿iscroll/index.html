@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- disable zooming -->
+    <meta name="viewport" content="initial-scale=1.0; minimum-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+    <link href="../html-common/public2.0.css" rel="stylesheet" type="text/css" />
+    <title></title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <div id="view">
+
+    </div>
+</body>
+<script type="text/javascript" src="../html-common/base/js/pcauto1.1.js"></script>
+<script type="text/javascript" src="../html-common/base/js/magazine.js"></script>
+<script type="text/javascript" src="../global/nonzar_.js"></script>
+<script>
+    $(document).ready(function () {
+        var myNZSwipe = NZSwipe.createNew().init({
+            parentId: "view",
+            plen: 4,
+            turnBefor: function (dir, pg) {
+                console.log("turn")
+            },
+            upBefor: function (pg) {
+                console.log("up")
+            },
+            downBefor: function (pg) {
+                console.log("down")
+            },
+            changeBefor: function (dir, pg) {
+                console.log("change")
+            }
+        });
+    });
+</script>
+</html>

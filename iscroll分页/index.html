@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+    <title>iScroll分页</title>
+    <style>
+        html,body {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 600;
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+    <script src="js/iscroll-probe.js"></script>
+    <script src="js/nz.paging.js?v=2"></script>
+</head>
+<body>
+    <div id="nzpg1">
+        <ul>
+            <li>
+                Slide 1
+                <ul class="NZPaging-unscroll">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                </ul>
+            </li>
+            <li>Slide 2</li>
+            <li>Slide 3</li>
+            <li>Slide 4</li>
+            <li>Slide 5</li>
+            <li>Slide 6</li>
+            <li>Slide 7</li>
+            <li>Slide 8</li>
+            <li>Slide 9</li>
+            <li>Slide 10</li>
+            <li>Slide 11</li>
+            <li>Slide 12</li>
+            <li>Slide 13</li>
+            <li>Slide 14</li>
+            <li>Slide 15</li>
+            <li>Slide 16</li>
+            <li>Slide 17</li>
+            <li>Slide 18</li>
+            <li>Slide 19</li>
+            <li>Slide 20</li>
+        </ul>
+    </div>
+    <script>
+        var nzpg1 = NZPaging.createNew().init({
+            id: "#nzpg1",
+            resetCss: true
+        });
+        nzpg1.on(NZPaging.eventType.flip, function () {
+            console.log(arguments[0])
+        });
+    </script>
+</body>
+</html>

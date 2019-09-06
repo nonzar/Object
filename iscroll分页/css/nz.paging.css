@@ -1,0 +1,21 @@
+.NZPaging {
+    padding: 0;
+    margin: 0;
+
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.NZPaging-body,
+.NZPaging-page {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    width: 100%;
+}
+
+.NZPaging-page {
+    overflow: hidden;
+}

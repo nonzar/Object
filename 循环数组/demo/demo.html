@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        #myCyc {
+            border: solid #3d3d3d 2px;
+            width: 100px;
+            height: 500px;
+            overflow: hidden;
+            position: absolute;
+            left: 400px;
+            top: 100px;
+        }
+
+        #myCyc li {
+            background-color: #E0E0E0;
+            font-size: 26px;
+            line-height: 100px;
+            text-align: center;
+            color: #fff;
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 0;
+            -webkit-transition: left 300ms,top 300ms;
+        }
+
+        #myCyc li:nth-child(1) {
+            background-color: #016D9B;
+            top: 0;
+        }
+
+        #myCyc li:nth-child(2) {
+            background-color: #0079AE;
+            top: 100px;
+        }
+
+        #myCyc li:nth-child(3) {
+            background-color: #0086C5;
+            top: 200px;
+        }
+
+        #myCyc li:nth-child(4) {
+            background-color: #0093DD;
+            top: 300px;
+        }
+
+        #myCyc li:nth-child(5) {
+            background-color: #016D9B;
+            top: 400px;
+        }
+
+        #myCyc li:nth-child(6) {
+            background-color: #0079AE;
+            top: 500px;
+        }
+
+        #myCyc li:nth-child(7) {
+            background-color: #0086C5;
+            top: 600px;
+        }
+
+        #myCyc li:nth-child(8) {
+            background-color: #0093DD;
+            top: 700px;
+        }
+
+        #myCyc li:nth-child(9) {
+            background-color: #0086C5;
+            top: 800px;
+        }
+
+        #myCyc li:nth-child(10) {
+            background-color: #0093DD;
+            top: 900px;
+        }
+    </style>
+</head>
+<body>
+    <ul id="myCyc">
+        <li class="">0</li>
+        <li class="">1</li>
+        <li class="">2</li>
+        <li class="">3</li>
+        <li class="">4</li>
+        <li class="">5</li>
+        <li class="">6</li>
+        <li class="">7</li>
+        <li class="">8</li>
+        <li class="">9</li>
+    </ul>
+    <a class="prev" href="javascript:;">prev</a>
+    <a class="next" href="javascript:;">next</a>
+    <script src="../../../公共代码/pcauto/ipad/html-common/base/js/require.js"></script>
+    <script>
+        var g_cyclistCtrl;
+        require(['../modules/nz_cyclistCtrl/cyclist.js'], function (cyclistCtrlM) {
+            var myCyc = cyclistCtrlM.init.createNew();
+            myCyc.init({
+                count: 10,//列表元素总数
+            });
+            g_cyclistCtrl = myCyc;
+        });
+        //业务代码
+        var myCyclist = document.getElementById("myCyc"),
+            myCyclistBtns = myCyclist.getElementsByTagName("li"),
+            btnPrev = document.getElementsByClassName("prev")[0],
+            btnNext = document.getElementsByClassName("next")[0],
+            lastArrIdx = [0, 1, 2, 3, 4];
+        btnPrev.onclick = function () {
+            var _arrIdx = g_cyclistCtrl.getPrev(1).slice(0, 5);
+            myCyclistBtns[lastArrIdx[lastArrIdx.length - 1]].style.top = 3 * 100 + "px";
+            for (var i = 0; i < _arrIdx.length; i++) {
+                myCyclistBtns[_arrIdx[i]].style.top = i * 100 + "px";
+            }
+            lastArrIdx = _arrIdx.concat();
+        }
+        btnNext.onclick = function () {
+            var _arrIdx = g_cyclistCtrl.getNext(1).slice(0, 5);
+            myCyclistBtns[lastArrIdx[0]].style.top = -100 + "px";
+            for (var i = 0; i < _arrIdx.length; i++) {
+                myCyclistBtns[_arrIdx[i]].style.top = i * 100 + "px";
+            }
+            lastArrIdx = _arrIdx.concat();
+        }
+    </script>
+</body>
+</html>

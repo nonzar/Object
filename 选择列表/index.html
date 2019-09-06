@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+    <title>选择列表</title>
+    <script type="text/javascript">
+        var html = document.querySelector('html');
+        var rem = html.offsetWidth / 6.4;
+        html.style.fontSize = rem + "px";
+    </script>
+    <link type="text/css" rel="stylesheet" href="css/nz.select.css" />
+</head>
+<body>
+</body>
+</html>
+<script src="js/nz.list.js"></script>
+<script src="js/nz.select.js"></script>
+<script>
+    //alert(navigator.userAgent)
+    /* 实例化 */
+    var nzselect1 = NZSelect.createNew().init({
+        displayMode: 0,
+        titHeight: "0.8rem",
+        id: "nzselect1"
+    });
+    /* 添加列表 */
+    nzselect1.add("列表标题1", NZList.createNew().init({
+        items: ["列表选项11", "列表选项12", "列表选项14"],
+        height: "0.6rem",
+        id: "nzuilist1",
+        maxLen: 5
+    })).lists[nzselect1.lists.length - 1].each(function (i, e) {
+        //do something
+    });
+    /* 添加列表 */
+    nzselect1.add("列表标题2", NZList.createNew().init({
+        items: ["列表选项21", "列表选项22", "列表选项24", "列表选项24"],
+        height: "0.6rem",
+        id: "nzuilist2",
+        maxLen: 5
+    })).lists[nzselect1.lists.length - 1].each(function (i, e) {
+        //do something
+    });
+    /* 添加列表 */
+    nzselect1.add("列表标题3", NZList.createNew().init({
+        items: ["列表选项31", "列表选项32", "列表选项34", "列表选项34", "列表选项35", "列表选项36", "列表选项37"],
+        height: "0.6rem",
+        id: "nzuilist3",
+        maxLen: 5
+    })).lists[nzselect1.lists.length - 1].each(function (i, e) {
+        //do something
+    });
+
+    /* 显示列表 */
+    window.onload = function () {
+        nzselect1.show(0);
+        setTimeout(function () {
+            nzselect1.show(1);
+            setTimeout(function () {
+                nzselect1.show(2);
+                setTimeout(function () {
+                    nzselect1.close();
+                }, 2000);
+            }, 2000);
+        }, 2000);
+    }
+
+    /* 改变列表文本 */
+    function setItemText() {
+        nzselect1.lists[0].items[0].innerHTML = "已更改文本";
+    }
+    /* 列表重置 */
+    function resizeList() {
+        nzselect1.setTit(0, "列表标题Over1");
+        nzselect1.lists[0].init({
+            items: ["列表选项Over1", "列表选项Over2", "列表选项Over3"]
+        });
+    }
+</script>

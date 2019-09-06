@@ -1,0 +1,108 @@
+﻿body {
+}
+
+.wrap {
+    min-width: 1170px;
+}
+
+.layout {
+    width: 1170px;
+}
+
+/*---------------------------------------- 类模块 ----------------------------------------*/
+.g_btnBack{
+    background: url("../images/sg_back_2.png") no-repeat 0 0;
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+    display: inline-block;
+}
+.g_btnBack:hover{
+    background-image: url("../images/sg_back_1.png");
+}
+
+.g_select{
+    display: inline-block;
+    position: relative;
+}
+.g_select span{
+    line-height: 78px;
+    font-size: 24px;
+    padding: 0 28px;
+    float: left;
+    display: inline-block;
+    border: solid #7096BB 1px;
+    border-right: none;
+}
+.g_select b{
+    background: url("../images/g_select_sg_1.png") no-repeat 0 0;
+    width: 80px;
+    height: 80px;
+    float: left;
+    overflow: hidden;
+    display: inline-block;
+}
+.g_select.drop b{
+    background-image: url("../images/g_select_sg_2.png");
+}
+
+.g_text{
+    font-size: 24px;
+    line-height: 80px;
+}
+.g_text *{
+    float: left;
+}
+.g_text span{
+    background: rgba(44,103,161,0.8);
+    background: rgb(44,103,161)\9\0;
+    padding-left: 30px;
+}
+.g_text input{
+    background: rgba(44,103,161,0.5);
+    background: rgb(44,103,161)\9\0;
+    line-height: 80px;
+    border: none;
+    font-size: 24px;
+    height: 80px;
+}
+.g_text a{
+    background: url("../images/g_text_sg_1.png") no-repeat 0 0;
+    width: 80px;
+    height: 80px;
+}
+.g_text.focus a {
+    background-image: url("../images/g_text_sg_2.png");
+}
+/*---------------------------------------- 公共代码 ----------------------------------------*/
+html {
+    background: #27579C url("../images/bg.jpg") no-repeat 0 0;
+}
+
+.header {
+    width: 1280px;
+}
+
+.header .logo {
+    padding-top: 20px;
+}
+
+.header .user {
+    line-height: 22px;
+    text-align: right;
+    font-size: 18px;
+    padding-top: 20px;
+}
+
+.header .user dd {
+    padding-top: 8px;
+    padding-right: 15px;
+}
+
+.header .user a {
+    font-size: 18px;
+}
+
+.header .user img {
+    border: solid #fff 1px;
+}

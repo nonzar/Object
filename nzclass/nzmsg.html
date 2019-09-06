@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script src="nzobject.js"></script>
+    <script src="nzchainfn.js"></script>
+    <script src="nzmask.js"></script>
+    <script src="nzmsg.js"></script>
+    <script>
+        var nzm1 = NZMsg.createNew().init();
+        nzm1.show({
+            tag: "123",
+            load: true,
+            time: 1000,
+            callback: function () {
+                alert(0)
+            }
+        });
+    </script>
+</body>
+</html>

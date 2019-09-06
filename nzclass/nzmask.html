@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="reset.css" />
+    <style>
+        .NZMask {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <p style="font-size: 72px;text-align: center;line-height: 200px;">test</p>
+    <div id="umTest1" class="NZMask">
+        umTest1
+    </div>
+    <div id="umTest2" class="NZMask">
+        umTest2
+    </div>
+    <script src="nzobject.js"></script>
+    <script src="nzchainfn.js"></script>
+    <script src="nzmask.js"></script>
+    <script>
+        //初始化
+        var nzm1 = NZMask.createNew().init();
+        setTimeout(function () {
+            /*
+                show:
+                    參數1:顯示的層id\索引
+                    參數2:回調函數[可選]
+                    參數3:是否手動指示回調結束(解決回調函數異步時需等待執行完的問題)[可選][默認false]
+                        會:回調結束引用參數e.fn()指示回調結束
+                        不會:省略\false
+            */
+            nzm1.show("umTest1", function (e) {
+                setTimeout(function () {
+                    console.log("0");
+                    e.fn();
+                }, 2000);
+            }, true).hide().show("umTest2", function (e) {
+                console.log("1");
+            }).show("umTest1", function (e) {
+                console.log("2");
+            }).show("umTest2", function (e) {
+                console.log("3");
+            });
+            //nzm1.show("umTest1").hide().show("umTest2").show("umTest1").hide().show("umTest2").show("umTest1").hide().show("umTest2");
+        }, 500);
+    </script>
+</body>
+</html>

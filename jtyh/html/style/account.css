@@ -1,0 +1,85 @@
+﻿/*---------------------------------------- p_account ----------------------------------------*/
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.header {
+    padding-right: 76px;
+}
+
+.container {
+    width: 100%;
+    min-width: 800px;
+    position: relative;
+}
+
+.ly1 {
+    text-align: center;
+    width: 1280px;
+    height: 770px;
+    padding-top: 20px;
+    padding: 20px 76px 0 0;
+    position: relative;
+}
+
+.g_btnBack {
+    position: absolute;
+    left: 0;
+    top: 70px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 24px;
+    padding-bottom: 64px;
+    padding-top: 70px;
+}
+
+.wb-list{
+    text-align: left;
+    width: 600px;
+}
+.wb-list li{
+    line-height: 80px;
+}
+.wb-list li.add{
+    background: transparent url("../images/sg_add1.png") no-repeat 50% 50%;
+    cursor: pointer;
+    height: 78px;
+    margin-bottom: 16px;
+    border: solid #A0BBD0 1px;
+}
+.wb-list li.add:hover {
+    background-color: #809ed4;
+}
+.wb-list li.sty1,
+.wb-list li.sty2 {
+    background-color: #44BE47;
+    height: 80px;
+    margin-bottom: 12px;
+}
+.wb-list li.sty1 h3,
+.wb-list li.sty2 h3{
+    font-size: 17px;
+    text-indent: 30px;
+    float: left;
+}
+.wb-list li.sty1 span,
+.wb-list li.sty2 span{
+    font-size: 16px;
+    padding-right: 25px;
+    float: right;
+}
+.wb-list li.sty1 a,
+.wb-list li.sty2 a{
+    background: url("../images/sg_close.png") no-repeat 50% 50%;
+    width: 80px;
+    height: 80px;
+    float: right;
+    display: inline-block;
+}
+.wb-list li.sty2{
+    background-color: #BD9408;
+}
